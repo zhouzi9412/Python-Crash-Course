@@ -9,13 +9,31 @@ class Dog():                                           #定义了一个空的类
 
     def sit(self):                                     #这些方法不需要额外的信息如名字和年龄，所以只有一个形参self
         """模拟小狗被命令时蹲下"""
-        print(self.name.title() + " is now sitting.")
+        print(self.name.title() + " is now sitting.")  #访问属性，句点表示法,python先找到实例my_dog，在查找与此实例相关的属性name，Dog中引用这个属性时，使用的是self.name
 
     def roll_over(self):
         """模拟小狗被命令时打滚"""
         print(self.name.title() + " rolled over!")
-my_dog = Dog('willie', 6)
-print("My dog's name is " + my_dog.name.title() + ".")
+####根据类创建实例####
+my_dog = Dog('willie', 6)                              #这两个实参调用方法__init__，方法创建一个表示特定小狗的实例，并使用我们提供的值来设置属性name和age，python自动返回一个表示小狗的实例，存储在变量my_dog中
+print("My dog's name is " + my_dog.name.title() + ".") #命名约定：首字母大写的名称代表类，小写的名称代表类创建的实例
 print("My dog's " + str(my_dog.age) + " years old.")
 
-####根据类创建实例####
+####调用方法####
+
+my_dog.sit()                                            #句点表示法调用Dog类中定义的任何方法，这里让小狗蹲下和打滚
+my_dog.roll_over()
+
+####创建多个实例####
+
+my_dog = Dog('willie', 6)
+your_dog = Dog('lucy', 3)
+print("My dog's name is " + my_dog.name.title() + ".")
+print("My dog's " + str(my_dog.age) + " years old.")
+my_dog.sit()
+
+print("\nYour dog's name is " + your_dog.name.title() + ".")
+print("Your dog is " + str(your_dog.age) + " years old.")
+your_dog.sit()
+
+
